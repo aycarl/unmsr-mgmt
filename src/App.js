@@ -3,16 +3,20 @@ import {
   HashRouter as Router,
   Switch,
   Route,
-  Redirect,
+  //Redirect,
 } from "react-router-dom";
 
-import Home from "./components/home";
+import Home from './components/home';
+import Dashboard from './components/dashboard'
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/home" component={Home} />
+      </Switch>
+    </Router>
   );
 }
 
