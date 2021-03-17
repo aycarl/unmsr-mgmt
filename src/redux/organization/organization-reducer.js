@@ -1,7 +1,8 @@
 import {OrganizationActionTypes} from "./organization-action-types";
 
 const INITIAL_STATE = {
-  newOrganization: null
+  newOrganization: {},
+  statusCode: ""
 }
 
 const OrganizationReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +11,18 @@ const OrganizationReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         newOrganization: action.payload
+      }
+      
+    case OrganizationActionTypes.SAVE_ORGANIZATION_AS_DRAFT:
+      return {
+        ...state,
+        statusCode: action.payload
+      }
+      
+    case OrganizationActionTypes.SUBMIT_NEW_ORGANIZATION:
+      return {
+        ...state,
+        statusCode: action.payload
       }
   
     default:
