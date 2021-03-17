@@ -17,6 +17,7 @@ const NewOrg = () => {
     false
   );
 
+  // state management for creating form fields
   const [name, setName] = React.useState("");
   const [nickname, setNickname] = React.useState("");
   const [fullDescription, setFullDescription] = React.useState("");
