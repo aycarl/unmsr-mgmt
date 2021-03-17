@@ -10,6 +10,7 @@ import Dashboard from "./components/dashboard";
 import Header from "./components/header";
 import Login from "./components/login";
 import SignUp from "./components/sign-up";
+import NewOrg from "./components/new-org";
 
 import "./App.css";
 
@@ -34,6 +35,7 @@ const appComponents = (
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route exact path="/home" component={Home} />
+        <Route exact path="/new-org" component={NewOrg} />
       </Switch>
     </div>
   </Router>

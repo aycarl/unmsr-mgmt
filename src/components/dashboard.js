@@ -12,7 +12,7 @@ const Dashboard = () => {
       <h1>Dashboard</h1>
       <Row className="section">
         <Col>
-          <LargeButton title="Add Organization" url="/organisations" />
+          <LargeButton title="Add Organization" url="/new-org" />
         </Col>
         <Col>
           <LargeButton title="Add Event" url="/events" />
@@ -21,13 +21,17 @@ const Dashboard = () => {
       <Row className="section">
         <Col>
           <h4>Clubs & Organizations</h4>
+          <hr />
           <OrgTableList />
         </Col>
         <Col>
           <h4>Events</h4>
-          <strong>Upcoming</strong>
+          <hr />
+          <p>Upcoming</p>
+          <hr />
           <Row></Row>
-          <strong>Past</strong>
+          <p>Past</p>
+          <hr />
           <Row></Row>
         </Col>
       </Row>
