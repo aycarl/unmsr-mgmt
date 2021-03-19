@@ -1,6 +1,9 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import { Form, Col, Button } from "react-bootstrap";
+
+import { CreateOrganization } from "./../redux/organization/organization-actions";
 
 import "./../component_styles/form.styles.css";
 
@@ -33,11 +36,42 @@ const NewOrg = () => {
     setMembershipCriteriaDetails,
   ] = React.useState("");
   const [membershipDuesDetails, setMembershipDuesDetails] = React.useState("");
+  const [organizationPrimaryCategory, setOrganizationPrimaryCategory] = React.useState("");
+  const [organizationSecondaryCategory, setOrganizationSecondaryCategory] = React.useState("");
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    let newOrganization = {
+      name,
+      nickname,
+      fullDescription,
+      email,
+      dateFounded,
+      phoneNumber,
+      location,
+      websiteUrl,
+      shortDescription,
+      organizationType,
+      membershipCriteriaRequired,
+      membershipCriteriaDetails,
+      membershipDuesRequired,
+      membershipDuesDetails,
+      organizationPrimaryCategory,
+      organizationSecondaryCategory
+    };
+
+    console.log(JSON.stringify(newOrganization));
+
+    dispatch(CreateOrganization(newOrganization));
+  };
 
   return (
     <div>
       <h2>New Organization</h2>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Row>
           <Form.Group as={Col} controlId="formGridName">
             <Form.Label className="form-label">Name</Form.Label>
@@ -138,6 +172,62 @@ const NewOrg = () => {
             >
               <option value="student_organization">Student Organization</option>
               <option value="department">Department</option>
+            </Form.Control>
+          </Form.Group>
+        </Form.Row>
+
+        <Form.Row>
+          <Form.Group as={Col} controlId="formGridOrgPrimaryCategory">
+            <Form.Label className="form-label">Organization Primary Category</Form.Label>
+            <Form.Control
+              as="select"
+              name="organization_primary_category"
+              value={organizationPrimaryCategory}
+              onChange={(e) => setOrganizationPrimaryCategory(e.target.value)}
+            >
+              <option value="ASUNM">ASUNM</option>
+              <option value="Academic">Academic</option>
+              <option value="Ethnic_or_Cultural">Ethnic / Cultural</option>
+              <option value="Fraternity">Fraternity</option>
+              <option value="Sorority">Sorority</option>
+              <option value="GPSA">GPSA</option>
+              <option value="Graduate">Graduate</option>
+              <option value="Honorary">Honorary</option>
+              <option value="Military">Military</option>
+              <option value="Political">Political</option>
+              <option value="Recreation">Recreation</option>
+              <option value="Religious">Religious</option>
+              <option value="Residence_Hall">Residence Hall</option>
+              <option value="Service">Service</option>
+              <option value="Special_Interest">Special Interest</option>
+              <option value="Sport">Sport</option>
+            </Form.Control>
+          </Form.Group>
+          
+          <Form.Group as={Col} controlId="formGridOrgSecondaryCategory">
+            <Form.Label className="form-label">Organization Secondary Category</Form.Label>
+            <Form.Control
+              as="select"
+              name="organization_secondary_category"
+              value={organizationSecondaryCategory}
+              onChange={(e) => setOrganizationSecondaryCategory(e.target.value)}
+            >
+              <option value="ASUNM">ASUNM</option>
+              <option value="Academic">Academic</option>
+              <option value="Ethnic_or_Cultural">Ethnic / Cultural</option>
+              <option value="Fraternity">Fraternity</option>
+              <option value="Sorority">Sorority</option>
+              <option value="GPSA">GPSA</option>
+              <option value="Graduate">Graduate</option>
+              <option value="Honorary">Honorary</option>
+              <option value="Military">Military</option>
+              <option value="Political">Political</option>
+              <option value="Recreation">Recreation</option>
+              <option value="Religious">Religious</option>
+              <option value="Residence_Hall">Residence Hall</option>
+              <option value="Service">Service</option>
+              <option value="Special_Interest">Special Interest</option>
+              <option value="Sport">Sport</option>
             </Form.Control>
           </Form.Group>
         </Form.Row>

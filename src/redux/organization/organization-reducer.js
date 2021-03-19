@@ -1,33 +1,34 @@
-import {OrganizationActionTypes} from "./organization-action-types";
+import { OrganizationActionTypes } from "./organization-action-types";
 
 const INITIAL_STATE = {
   newOrganization: {},
-  statusCode: ""
-}
+  allOrganizations: [],
+  statusCode: "",
+};
 
 const OrganizationReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case OrganizationActionTypes.CREATE_NEW_ORGANIZATION:
+    case OrganizationActionTypes.CREATE_ORGANIZATION:
       return {
         ...state,
-        newOrganization: action.payload
-      }
-      
-    case OrganizationActionTypes.SAVE_ORGANIZATION_AS_DRAFT:
+        newOrganization: action.payload,
+      };
+
+    case OrganizationActionTypes.FETCH_ALL_ORGNANIZATIONS:
       return {
         ...state,
-        statusCode: action.payload
-      }
-      
-    case OrganizationActionTypes.SUBMIT_NEW_ORGANIZATION:
+        allOrganizations: action.payload,
+      };
+
+    case OrganizationActionTypes.FETCH_ALL_ORGNANIZATIONS_FAILURE:
       return {
         ...state,
-        statusCode: action.payload
-      }
-  
+        statusCode: action.payload,
+      };
+
     default:
       return state;
   }
-}
+};
 
 export default OrganizationReducer;

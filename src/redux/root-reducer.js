@@ -9,7 +9,7 @@ import OrganizationReducer from './organization/organization-reducer'
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['noticeBoard']
+  whitelist: []
 }
 
 const rootReducer = combineReducers({
