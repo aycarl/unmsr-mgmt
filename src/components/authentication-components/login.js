@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Form, Button } from "react-bootstrap";
 
-import "./../component_styles/auth.styles.css";
+import "./../../component_styles/auth.styles.css";
 
 const Login = () => {
   return (

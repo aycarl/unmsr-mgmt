@@ -8,8 +8,8 @@ import {
 import Home from "./components/home";
 import Dashboard from "./components/dashboard";
 import Header from "./components/header";
-import Login from "./components/login";
-import SignUp from "./components/sign-up";
+import Login from "./components/authentication-components/login";
+import SignUp from "./components/authentication-components/sign-up";
 import NewOrg from "./components/organization-components/new-org";
 
 import "./App.css";

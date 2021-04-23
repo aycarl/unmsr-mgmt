@@ -15,7 +15,7 @@ const OrgTitleList = () => {
     <div>
       {listOfOrganizations ? (
         listOfOrganizations.map((org) => (
-          <Card>
+          <Card key={org.id}>
             <Card.Body>{org.name}{' '}({org.nickname})</Card.Body>
           </Card>
         ))
