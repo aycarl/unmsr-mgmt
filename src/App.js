@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import Home from "./components/home";
-import Dashboard from "./components/dashboard";
+import Dashboard from "./components/dashboard.tsx";
 import Header from "./components/header";
 import Login from "./components/authentication-components/login";
 import SignUp from "./components/authentication-components/sign-up";
