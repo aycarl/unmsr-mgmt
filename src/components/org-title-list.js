@@ -6,14 +6,14 @@ import { Card } from "react-bootstrap";
 import { selectAllOrganizations } from "../redux/organization/organization-selectors";
 
 // displays list of organization categories and the respective number of organizations
-const OrgTitleList = () => {
+const OrgTitleList = ({ fetched }) => {
   const listOfOrganizations = useSelector(selectAllOrganizations);
 
   console.log("orgs list: " + listOfOrganizations);
 
   return (
     <div>
-      {listOfOrganizations ? (
+      {fetched && listOfOrganizations ? (
         listOfOrganizations.map((org) => (
           <Card key={org.id}>
             <Card.Body>{org.name}{' '}({org.nickname})</Card.Body>

@@ -9,16 +9,6 @@ import "./../../component_styles/form.styles.css";
 
 // displays a page for creating a new organization
 const NewOrg = () => {
-  // state management for toggling membership criteria input field
-  const [
-    membershipCriteriaRequired,
-    setMembershipCriteriaRequired,
-  ] = React.useState(false);
-
-  // state management for toggling membership dues input field
-  const [membershipDuesRequired, setMembershipDuesRequired] = React.useState(
-    false
-  );
 
   // state management for creating form fields
   const [name, setName] = React.useState("");
@@ -31,13 +21,6 @@ const NewOrg = () => {
   const [websiteUrl, setWebsiteUrl] = React.useState("");
   const [shortDescription, setShortDescription] = React.useState("");
   const [organizationType, setOrganizationType] = React.useState("");
-  const [
-    membershipCriteriaDetails,
-    setMembershipCriteriaDetails,
-  ] = React.useState("");
-  const [membershipDuesDetails, setMembershipDuesDetails] = React.useState("");
-  const [organizationPrimaryCategory, setOrganizationPrimaryCategory] = React.useState("");
-  const [organizationSecondaryCategory, setOrganizationSecondaryCategory] = React.useState("");
 
   const dispatch = useDispatch();
 
@@ -55,12 +38,6 @@ const NewOrg = () => {
       websiteUrl,
       shortDescription,
       organizationType,
-      membershipCriteriaRequired,
-      membershipCriteriaDetails,
-      membershipDuesRequired,
-      membershipDuesDetails,
-      organizationPrimaryCategory,
-      organizationSecondaryCategory
     };
 
     console.log(JSON.stringify(newOrganization));
@@ -176,62 +153,6 @@ const NewOrg = () => {
           </Form.Group>
         </Form.Row>
 
-        <Form.Row>
-          <Form.Group as={Col} controlId="formGridOrgPrimaryCategory">
-            <Form.Label className="form-label">Organization Primary Category</Form.Label>
-            <Form.Control
-              as="select"
-              name="organization_primary_category"
-              value={organizationPrimaryCategory}
-              onChange={(e) => setOrganizationPrimaryCategory(e.target.value)}
-            >
-              <option value="ASUNM">ASUNM</option>
-              <option value="Academic">Academic</option>
-              <option value="Ethnic_or_Cultural">Ethnic / Cultural</option>
-              <option value="Fraternity">Fraternity</option>
-              <option value="Sorority">Sorority</option>
-              <option value="GPSA">GPSA</option>
-              <option value="Graduate">Graduate</option>
-              <option value="Honorary">Honorary</option>
-              <option value="Military">Military</option>
-              <option value="Political">Political</option>
-              <option value="Recreation">Recreation</option>
-              <option value="Religious">Religious</option>
-              <option value="Residence_Hall">Residence Hall</option>
-              <option value="Service">Service</option>
-              <option value="Special_Interest">Special Interest</option>
-              <option value="Sport">Sport</option>
-            </Form.Control>
-          </Form.Group>
-          
-          <Form.Group as={Col} controlId="formGridOrgSecondaryCategory">
-            <Form.Label className="form-label">Organization Secondary Category</Form.Label>
-            <Form.Control
-              as="select"
-              name="organization_secondary_category"
-              value={organizationSecondaryCategory}
-              onChange={(e) => setOrganizationSecondaryCategory(e.target.value)}
-            >
-              <option value="ASUNM">ASUNM</option>
-              <option value="Academic">Academic</option>
-              <option value="Ethnic_or_Cultural">Ethnic / Cultural</option>
-              <option value="Fraternity">Fraternity</option>
-              <option value="Sorority">Sorority</option>
-              <option value="GPSA">GPSA</option>
-              <option value="Graduate">Graduate</option>
-              <option value="Honorary">Honorary</option>
-              <option value="Military">Military</option>
-              <option value="Political">Political</option>
-              <option value="Recreation">Recreation</option>
-              <option value="Religious">Religious</option>
-              <option value="Residence_Hall">Residence Hall</option>
-              <option value="Service">Service</option>
-              <option value="Special_Interest">Special Interest</option>
-              <option value="Sport">Sport</option>
-            </Form.Control>
-          </Form.Group>
-        </Form.Row>
-
         <Form.Group controlId="formGridLocation">
           <Form.Label className="form-label">Location</Form.Label>
           <Form.Control
@@ -243,66 +164,6 @@ const NewOrg = () => {
             placeholder="Enter full address/location of organization"
           />
         </Form.Group>
-
-        <Form.Label className="form-label">Membership Criteria</Form.Label>
-        <hr />
-
-        <Form.Row>
-          <Form.Group as={Col} controlId="formGridMembershipCriteriaCheckbox">
-            <Form.Check
-              type="switch"
-              name="membership_citeria_required"
-              label="Required"
-              value={membershipCriteriaRequired}
-              onChange={() =>
-                setMembershipCriteriaRequired(!membershipCriteriaRequired)
-              }
-            />
-          </Form.Group>
-
-          {membershipCriteriaRequired ? (
-            <Form.Group as={Col} controlId="formGridMembershipCriteria">
-              <Form.Control
-                name="membership_criteria_details"
-                value={membershipCriteriaDetails}
-                onChange={(e) => setMembershipCriteriaDetails(e.target.value)}
-                placeholder="Enter requirements to join this organization"
-              />
-            </Form.Group>
-          ) : (
-            <div as={Col}>.</div>
-          )}
-        </Form.Row>
-
-        <Form.Label className="form-label">Membership Dues</Form.Label>
-        <hr />
-
-        <Form.Row>
-          <Form.Group as={Col} controlId="formGridMembershipDuesCheckbox">
-            <Form.Check
-              type="switch"
-              name="membership_dues_Required"
-              label="Required"
-              value={membershipDuesRequired}
-              onChange={() =>
-                setMembershipDuesRequired(!membershipDuesRequired)
-              }
-            />
-          </Form.Group>
-
-          {membershipDuesRequired ? (
-            <Form.Group as={Col} controlId="formGridMembershipDues">
-              <Form.Control
-                name="membership_dues_details"
-                value={membershipDuesDetails}
-                onChange={(e) => setMembershipDuesDetails(e.target.value)}
-                placeholder="Enter details about membership dues"
-              />
-            </Form.Group>
-          ) : (
-            <div as={Col}>.</div>
-          )}
-        </Form.Row>
 
         <Button variant="primary" type="submit">
           Submit

@@ -8,13 +8,13 @@ import {
 import Home from "./components/home";
 import Dashboard from "./components/dashboard.tsx";
 import Header from "./components/header";
-import Login from "./components/authentication-components/login";
-import SignUp from "./components/authentication-components/sign-up";
-import NewOrg from "./components/organization-components/new-org";
+import Login from "./components/authentication-components/login.tsx";
+import SignUp from "./components/authentication-components/signup.tsx";
+import NewOrg from "./components/organization-components/new-organization";
 
 import "./App.css";
 
-let authToken = "null";
+let authToken = "";
 
 const authComponents = (
   <Router>

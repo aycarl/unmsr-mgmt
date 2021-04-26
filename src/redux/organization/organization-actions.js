@@ -30,6 +30,7 @@ export const FetchAllOrganizationsFailure = errorCode => ({
   payload: errorCode
 });
 
+// TODO: change 'DB' to 'API' in action creator name
 export const FetchAllOrganizationsFromDB = () => {
   return async dispatch => {
     axios.get('https://tilde-coco-strapi.herokuapp.com/organizations')

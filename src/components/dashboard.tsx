@@ -43,7 +43,7 @@ const Dashboard = () => {
         <Col>
           <h4>Clubs & Organizations</h4>
           <hr />
-          <OrgTitleList />
+          <OrgTitleList fetched={fetched} />
         </Col>
         <Col>
           <h4>Events</h4>
