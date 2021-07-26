@@ -6,15 +6,15 @@ import {
 } from "react-router-dom";
 
 import Home from "./components/home";
-import Dashboard from "./components/dashboard";
+import Dashboard from "./components/dashboard.tsx";
 import Header from "./components/header";
-import Login from "./components/login";
-import SignUp from "./components/sign-up";
-import NewOrg from "./components/new-org";
+import Login from "./components/authentication-components/login.tsx";
+import SignUp from "./components/authentication-components/signup.tsx";
+import NewOrg from "./components/organization-components/new-organization";
 
 import "./App.css";
 
-let authToken = "null";
+let authToken = "0";
 
 const authComponents = (
   <Router>
