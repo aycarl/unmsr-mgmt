@@ -5,14 +5,16 @@ import {
   Route,
 } from "react-router-dom";
 
-import Home from "./components/home";
-import Dashboard from "./components/dashboard.tsx";
-import Header from "./components/header";
+import Home from "./components/pages/home";
+import Dashboard from "./components/pages/dashboard.tsx";
+import Header from "./components/shared-components/header";
 import Login from "./components/authentication-components/login.tsx";
 import SignUp from "./components/authentication-components/signup.tsx";
 import NewOrg from "./components/organization-components/new-organization";
 
 import "./App.css";
+import Organizations from "./components/pages/organizations";
+import Events from "./components/pages/events";
 
 let authToken = "0";
 
@@ -34,7 +36,8 @@ const appComponents = (
       <Header />
       <Switch>
         <Route exact path="/" component={Dashboard} />
-        <Route exact path="/home" component={Home} />
+        <Route exact path="/organizations" component={Organizations} />
+        <Route exact path="/events" component={Events} />
         <Route exact path="/new-org" component={NewOrg} />
       </Switch>
     </div>

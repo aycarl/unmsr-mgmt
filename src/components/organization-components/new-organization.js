@@ -5,7 +5,7 @@ import { Form, Col, Button } from "react-bootstrap";
 
 import { CreateOrganization } from "../../redux/organization/organization-actions";
 
-import "./../../component_styles/form.styles.css";
+import "./../../css/form.styles.css";
 
 // displays a page for creating a new organization
 const NewOrg = () => {

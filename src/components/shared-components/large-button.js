@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button } from "react-bootstrap";
 
-import "./../component_styles/large-button.styles.css";
+import "./../../css/large-button.styles.css";
 
 const LargeButton = ({title, url}) => {
   return (

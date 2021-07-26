@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { Card } from "react-bootstrap";
 
-import { selectAllOrganizations } from "../redux/organization/organization-selectors";
+import { selectAllOrganizations } from "./../../redux/organization/organization-selectors";
 
 // displays list of organization categories and the respective number of organizations
 const OrgTitleList = ({ fetched }) => {
