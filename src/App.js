@@ -14,7 +14,7 @@ import NewOrg from "./components/organization-components/new-organization";
 
 import "./App.css";
 
-let authToken = "";
+let authToken = "0";
 
 const authComponents = (
   <Router>

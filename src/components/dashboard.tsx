@@ -8,6 +8,7 @@ import { FetchAllOrganizationsFromDB } from "../redux/organization/organization-
 
 import LargeButton from "./large-button";
 import OrgTitleList from "./org-title-list";
+import SummaryStatistics from "./dashboard-components/summary-statistics";
 
 const Dashboard = () => {
 
@@ -39,6 +40,7 @@ const Dashboard = () => {
           <LargeButton title="Add Event" url="/events" />
         </Col>
       </Row>
+      <SummaryStatistics />
       <Row className="section">
         <Col>
           <h4>Clubs & Organizations</h4>
